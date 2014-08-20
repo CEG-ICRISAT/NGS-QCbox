@@ -1,0 +1,5 @@
+bpipe.Runner	INFO	|2:45:59 Starting 
+bpipe.Runner	INFO	|2:45:59 OS: Linux (3.5.0-51-generic) Java: 1.7.0_55 Vendor: Oracle Corporation 
+bpipe.Config	INFO	|2:45:59 No local configuration file found 
+bpipe.Runner	INFO	|2:45:59 Stopping running commands 
+bpipe.CommandManager	INFO	|2:45:59 Successfully stopped 0 commands 

@@ -1,0 +1,19 @@
+bpipe.Runner	INFO	|4:33:18 Starting 
+bpipe.Runner	INFO	|4:33:18 OS: Linux (3.8.0-33-generic) Java: 1.7.0_11 Vendor: Oracle Corporation 
+bpipe.Config	INFO	|4:33:18 No local configuration file found 
+bpipe.ToolDatabase	INFO	|4:33:18 Loading tool database from user configuration 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool samtools 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool bwa 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool bowtie 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool fastqc 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool coverageBed 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool fastx_clipper 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool convert2annovar.pl 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool summarize_annovar.pl 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool bowtie2 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool GenomeAnalysisTK 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool MarkDuplicates 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool signalp 
+bpipe.Tool	INFO	|4:33:18 Configured meta data about tool ls 
+bpipe.Runner	INFO	|4:33:18 No CLI parameters specified 
+bpipe.Runner	INFO	|4:33:18 Deleting job file /home/km/.bpipedb/jobs/20907 

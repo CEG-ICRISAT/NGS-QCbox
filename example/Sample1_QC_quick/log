@@ -1,0 +1,97 @@
+====================================================================================================
+|                              Starting Pipeline at 2014-08-14 13:20                               |
+====================================================================================================
+
+=========================================== Stage baseqc ===========================================
+File name : Read1.gz
+Total bases : 740009
+total reads : 2500
+% bases >=Q20 : 77.419
+% bases >=Q30 : 63.051
+Average read length : 296.004
+Read length range : 35 .. 301
+Quality range : 35 .. 71
+Phred range : 2 .. 38
+Offset : 33
+A : 226116
+T : 264546
+G : 106905
+C : 142407
+N : 35
+percent G-C content : 33.690
+File name : Read2.gz
+Total bases : 743075
+total reads : 2500
+% bases >=Q20 : 65.885
+% bases >=Q30 : 47.672
+Average read length : 297.230
+Read length range : 35 .. 301
+Quality range : 35 .. 71
+Phred range : 2 .. 38
+Offset : 33
+A : 203738
+T : 276831
+G : 96296
+C : 166175
+N : 35
+percent G-C content : 35.322
+
+=========================================== Stage qtrim ============================================
+
+FastQ paired records kept: 3472 (1736 pairs)
+FastQ single records kept: 612 (from PE1: 607, from PE2: 5)
+FastQ paired records discarded: 304 (152 pairs)
+FastQ single records discarded: 612 (from PE1: 5, from PE2: 607)
+
+
+========================================== Stage baseqc1 ===========================================
+File name : Read1.gz.qtrim
+Total bases : 450568
+total reads : 1736
+% bases >=Q20 : 94.475
+% bases >=Q30 : 85.234
+Average read length : 259.544
+Read length range : 51 .. 301
+Quality range : 40 .. 71
+Phred range : 7 .. 38
+Offset : 33
+A : 151627
+T : 153611
+G : 71935
+C : 73395
+N : 0
+percent G-C content : 32.255
+File name : Read1.gz.2.qtrim
+Total bases : 398731
+total reads : 1736
+% bases >=Q20 : 91.530
+% bases >=Q30 : 78.498
+Average read length : 229.684
+Read length range : 50 .. 301
+Quality range : 40 .. 71
+Phred range : 7 .. 38
+Offset : 33
+A : 132435
+T : 139709
+G : 61136
+C : 65451
+N : 0
+percent G-C content : 31.747
+File name : Read1.gz.3.qtrim
+Total bases : 59562
+total reads : 612
+% bases >=Q20 : 88.053
+% bases >=Q30 : 75.803
+Average read length : 97.324
+Read length range : 50 .. 301
+Quality range : 40 .. 71
+Phred range : 7 .. 38
+Offset : 33
+A : 17675
+T : 22258
+G : 8759
+C : 10870
+N : 0
+percent G-C content : 32.956
+
+======================================== Pipeline Finished =========================================

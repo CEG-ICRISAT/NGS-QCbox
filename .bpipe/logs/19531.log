@@ -1,0 +1,10 @@
+====================================================================================================
+|                              Starting Pipeline at 2014-08-13 16:57                               |
+====================================================================================================
+
+Pipeline Failed!
+
+A variable referred to in your script on line 5, 'QCBIN' was not defined.  
+
+Please check that all pipeline stages or other variables you have referenced by this name are defined.
+

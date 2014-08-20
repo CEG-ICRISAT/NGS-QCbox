@@ -1,0 +1,62 @@
+baseqc = {
+    from('Read1.gz', 'Read2.gz'){
+        exec  """ \$QCBIN/QC_reads_gz Read1.gz"""
+        exec  """ \$QCBIN/QC_reads_gz Read2.gz"""
+    }
+}
+
+qtrim = {
+    from('Read1.gz', 'Read2.gz'){
+            exec """ \$QCBIN/sickle pe -f <(zcat $input1) -r <(zcat $input2) -o $output1 -p $output2 -s $output3  -l 50 -n -t sanger """
+    }
+}
+
+baseqc1 = {
+        exec "\$QCBIN/QC_reads_fastq $input1.qtrim"
+        exec "\$QCBIN/QC_reads_fastq $input2.qtrim"
+        exec "\$QCBIN/QC_reads_fastq $input3.qtrim"
+        forward input
+}
+
+sam = {
+exec """ echo \$REFERENCE"""
+exec """ echo \$GENOME_SIZE"""
+exec """ echo \$MAX_INSERT_SIZE"""
+exec """ echo \$MIN_INSERT_SIZE"""
+exec """ echo \$BOWTIE2_INDEX_PATH"""
+	exec """ \$QCBIN/bowtie2 -p 10 --end-to-end -I 400 -X 600 -x example/phix_index -1 $input1 -2 $input2 -U $input3 -S $output """
+}
+
+bam = {
+        exec """ \$QCBIN/samtools view -bSu Read1.gz.qtrim.sam | \$QCBIN/samtools sort -o - - > $output"""
+}
+
+bai = {
+   exec """ \$QCBIN/samtools index $input"""
+   forward input
+}
+
+read_depths = {
+    exec """ \$QCBIN/bedtools genomecov -bga -ibam $input  > $output.bed """
+}
+
+coverage = {
+    exec """ \$QCBIN/genome_cov.py $input.bed  \$GENOME_SIZE """
+}
+
+variant_calling = {
+    exec """ \$QCBIN/samtools mpileup -uf \$REFERENCE $input | \$QCBIN/bcftools view -bvcg - > $output.bcf"""
+}
+
+vcf = {
+exec """ \$QCBIN/bcftools view $input.bcf | \$QCBIN/vcfutils.pl varFilter > $output"""
+}
+test = {
+exec """ echo \$REFERENCE"""
+exec """ echo \$GENOME_SIZE"""
+exec """ echo \$MAX_INSERT_SIZE"""
+exec """ echo \$MIN_INSERT_SIZE"""
+exec """ echo \$BOWTIE2_INDEX_PATH"""
+}
+
+Bpipe.run  { baseqc + qtrim + baseqc1 + sam + bam + bai + [read_depths + coverage , variant_calling + vcf]}

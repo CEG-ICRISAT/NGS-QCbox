@@ -1,0 +1,256 @@
+bpipe.Runner	INFO	|1:20:56 Starting 
+bpipe.Runner	INFO	|1:20:56 OS: Linux (3.8.0-33-generic) Java: 1.7.0_11 Vendor: Oracle Corporation 
+bpipe.Config	INFO	|1:20:57 No local configuration file found 
+bpipe.ToolDatabase	INFO	|1:20:57 Loading tool database from user configuration 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool samtools 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool bwa 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool bowtie 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool fastqc 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool coverageBed 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool fastx_clipper 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool convert2annovar.pl 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool summarize_annovar.pl 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool bowtie2 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool GenomeAnalysisTK 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool MarkDuplicates 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool signalp 
+bpipe.Tool	INFO	|1:20:57 Configured meta data about tool ls 
+bpipe.Runner	INFO	|1:20:57 No CLI parameters specified 
+bpipe.Pipeline	INFO	|1:20:57 Running with input null 
+bpipe.PipelineCategory	INFO	|1:20:57 Found closure variable baseqc 
+bpipe.PipelineCategory	INFO	|1:20:57 Found closure variable qtrim 
+bpipe.PipelineCategory	INFO	|1:20:57 Found closure variable baseqc1 
+bpipe.Pipeline	WARNING	|1:20:57 Pipeline folder /home/km/bpipes could not be found 
+bpipe.Pipeline	INFO	|1:20:57 Running segment with inputs null 
+bpipe.Dependencies	INFO	|1:20:57 Checking null 
+bpipe.Dependencies	INFO	|1:20:57 Checking null 
+bpipe.Dependencies	INFO	|1:20:57 Checking null 
+bpipe.PipelineStage	INFO	|1:20:57 Stage baseqc : INPUT=null OUTPUT=baseqc 
+bpipe.PipelineContext	INFO	|1:20:57 Searching for inputs matching spec [Read1.gz, Read2.gz] 
+bpipe.PipelineContext	INFO	|1:20:57 Input list to check:  [[], [], [], []] 
+bpipe.PipelineContext	INFO	|1:20:57 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:57 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:57 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:57 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:57 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:57 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:57 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:57 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:57 Found inputs [Read1.gz, Read2.gz] for spec [Read1.gz, Read2.gz] 
+bpipe.PipelineContext	INFO	|1:20:57 Tracking outputs referenced=[[]] inferred=[[]] for command  $QCBIN/QC_reads_gz  Read1.gz 
+bpipe.PipelineContext	INFO	|1:20:57 Checking actual resolved inputs [Read1.gz, Read2.gz] 
+bpipe.CommandManager	INFO	|1:20:57 Checking for configuration for command $QCBIN/QC_reads_gz 
+bpipe.CommandManager	INFO	|1:20:57 Default command properties: [executor:local] 
+bpipe.CommandManager	INFO	|1:20:57 Using config [executor:local] for command 
+bpipe.CommandManager	INFO	|1:20:58 Created bpipe command id 1 
+bpipe.Concurrency	INFO	|1:20:58 Creating thread pool with 32 threads to execute parallel pipelines 
+bpipe.Concurrency	INFO	|1:20:58 Thread main requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	INFO	|1:20:58 Thread main acquired resource threads in amount 1 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Waiting for command to complete before releasing 1 resources 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Releasing 1 resources 
+bpipe.Concurrency	INFO	|1:20:58 Thread main releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Released 1 resources 
+bpipe.PipelineContext	INFO	|1:20:58 Tracking outputs referenced=[[]] inferred=[[]] for command  $QCBIN/QC_reads_gz  Read2.gz 
+bpipe.PipelineContext	INFO	|1:20:58 Checking actual resolved inputs [Read1.gz, Read2.gz] 
+bpipe.CommandManager	INFO	|1:20:58 Checking for configuration for command $QCBIN/QC_reads_gz 
+bpipe.CommandManager	INFO	|1:20:58 Default command properties: [executor:local] 
+bpipe.CommandManager	INFO	|1:20:58 Using config [executor:local] for command 
+bpipe.CommandManager	INFO	|1:20:58 Created bpipe command id 2 
+bpipe.Concurrency	INFO	|1:20:58 Thread main requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	INFO	|1:20:58 Thread main acquired resource threads in amount 1 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Waiting for command to complete before releasing 1 resources 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Releasing 1 resources 
+bpipe.Concurrency	INFO	|1:20:58 Thread main releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Released 1 resources 
+bpipe.PipelineStage	INFO	|1:20:58 Stage baseqc returned null as default inputs for next stage 
+bpipe.PipelineStage	INFO	|1:20:58 Removing inferred outputs matching [\.bai$, \.log$] 
+bpipe.PipelineStage	INFO	|1:20:58 Comparing default output baseqc to new files [./log] 
+bpipe.PipelineStage	INFO	|1:20:58 Using next input inferred from created files [./log] : ./log 
+bpipe.PipelineContext	INFO	|1:20:58 Setting output ./log on context 14188182 in thread 1 
+bpipe.PipelineStage	INFO	|1:20:58 Setting next inputs ./log on stage 90090057, context 14188182 in thread 1 
+bpipe.PipelineStage	INFO	|1:20:58 Checking files: ./log 
+bpipe.Dependencies	INFO	|1:20:58 Checking ./log 
+bpipe.Dependencies	INFO	|1:20:58  Checking file ./log 
+bpipe.Dependencies	INFO	|1:20:58 Checking ./log 
+bpipe.Dependencies	INFO	|1:20:58  Checking file ./log 
+bpipe.PipelineCategory	INFO	|1:20:58 Next inputs from stage = ./log 
+bpipe.PipelineCategory	INFO	|1:20:58 Checking inputs for next stage:  ./log 
+bpipe.Dependencies	INFO	|1:20:58 Checking ./log 
+bpipe.Dependencies	INFO	|1:20:58  Checking file ./log 
+bpipe.Dependencies	INFO	|1:20:58 Checking ./log 
+bpipe.Dependencies	INFO	|1:20:58  Checking file ./log 
+bpipe.PipelineStage	INFO	|1:20:58 Stage qtrim : INPUT=./log OUTPUT=log.qtrim 
+bpipe.PipelineContext	INFO	|1:20:58 Searching for inputs matching spec [Read1.gz, Read2.gz] 
+bpipe.PipelineContext	INFO	|1:20:58 Input list to check:  [[./log], [./log], [], [], []] 
+bpipe.PipelineContext	INFO	|1:20:58 Check ./log ends with Read1.gz 
+bpipe.PipelineContext	INFO	|1:20:58 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:58 Check ./log ends with Read1.gz 
+bpipe.PipelineContext	INFO	|1:20:58 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:58 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:58 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:58 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:58 Check ./log ends with Read2.gz 
+bpipe.PipelineContext	INFO	|1:20:58 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:58 Check ./log ends with Read2.gz 
+bpipe.PipelineContext	INFO	|1:20:58 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:58 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:58 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:58 Matched : [] 
+bpipe.PipelineContext	INFO	|1:20:58 Found inputs [Read1.gz, Read2.gz] for spec [Read1.gz, Read2.gz] 
+bpipe.PipelineDelegate	INFO	|1:20:58 Input 1 reference resolved by PipelineDelegate 
+bpipe.PipelineDelegate	INFO	|1:20:58 Input 2 reference resolved by PipelineDelegate 
+bpipe.PipelineDelegate	INFO	|1:20:58 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	INFO	|1:20:58 Using non-default output due to input property reference: Read1.gz from resolved inputs [Read1.gz, Read2.gz] 
+bpipe.PipelineContext	INFO	|1:20:58 Query for output 0 base result = Read1.gz.qtrim 
+bpipe.PipelineDelegate	INFO	|1:20:58 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	INFO	|1:20:58 Using non-default output due to input property reference: Read1.gz from resolved inputs [Read1.gz, Read2.gz] 
+bpipe.PipelineContext	INFO	|1:20:58 No previously set output at 1 from 1 outputs. Synthesizing from index based on first output 
+bpipe.PipelineContext	INFO	|1:20:58 Query for output 1 base result = Read1.gz.2.qtrim 
+bpipe.PipelineDelegate	INFO	|1:20:58 Output 3 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	INFO	|1:20:58 Using non-default output due to input property reference: Read1.gz from resolved inputs [Read1.gz, Read2.gz] 
+bpipe.PipelineContext	INFO	|1:20:58 No previously set output at 2 from 1 outputs. Synthesizing from index based on first output 
+bpipe.PipelineContext	INFO	|1:20:58 Query for output 2 base result = Read1.gz.3.qtrim 
+bpipe.PipelineContext	INFO	|1:20:58 Tracking outputs referenced=[[]] inferred=[[Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim]] for command  $QCBIN/sickle pe -f <(zcat Read1.gz) -r <(zcat Read2.gz) -o Read1.gz.qtrim -p Read1.gz.2.qtrim -s Read1.gz.3.qtrim  -l 50 -n -t sanger  
+bpipe.PipelineContext	INFO	|1:20:58 Checking actual resolved inputs [Read1.gz, Read2.gz] 
+bpipe.Utils	INFO	|1:20:58 ===== Check Read1.gz.qtrim ===== 
+bpipe.Utils	INFO	|1:20:58 file doesn't exist: Read1.gz.qtrim 
+bpipe.Utils	INFO	|1:20:58 ===== Check Read1.gz.2.qtrim ===== 
+bpipe.Utils	INFO	|1:20:58 file doesn't exist: Read1.gz.2.qtrim 
+bpipe.Utils	INFO	|1:20:58 ===== Check Read1.gz.3.qtrim ===== 
+bpipe.Utils	INFO	|1:20:58 file doesn't exist: Read1.gz.3.qtrim 
+bpipe.Dependencies	INFO	|1:20:58 Found these missing / older files: [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:58 Some files are outdated : [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.CommandManager	INFO	|1:20:58 Checking for configuration for command $QCBIN/sickle 
+bpipe.CommandManager	INFO	|1:20:58 Default command properties: [executor:local] 
+bpipe.CommandManager	INFO	|1:20:58 Using config [executor:local] for command 
+bpipe.CommandManager	INFO	|1:20:58 Created bpipe command id 3 
+bpipe.Concurrency	INFO	|1:20:58 Thread main requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	INFO	|1:20:58 Thread main acquired resource threads in amount 1 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Waiting for command to complete before releasing 1 resources 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Releasing 1 resources 
+bpipe.Concurrency	INFO	|1:20:58 Thread main releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Released 1 resources 
+bpipe.PipelineStage	INFO	|1:20:58 Stage qtrim returned null as default inputs for next stage 
+bpipe.PipelineStage	INFO	|1:20:58 Using inferred outputs [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] as outputs because no explicit outputs set 
+bpipe.PipelineStage	INFO	|1:20:58 Inferring nextInputs from explicit output as [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.PipelineStage	INFO	|1:20:58 Setting next inputs [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] on stage 1351978313, context 175037684 in thread 1 
+bpipe.Dependencies	INFO	|1:20:58 Context 175037684 for stage qtrim has resolved inputs [Read1.gz, Read2.gz] 
+bpipe.Dependencies	INFO	|1:20:58 Saving output file details to file .bpipe/outputs/qtrim.Read1.gz.qtrim.properties for command $QCBIN/sickle pe -f ... 
+bpipe.Dependencies	INFO	|1:20:58 Context 175037684 for stage qtrim has resolved inputs [Read1.gz, Read2.gz] 
+bpipe.Dependencies	INFO	|1:20:58 Saving output file details to file .bpipe/outputs/qtrim.Read1.gz.2.qtrim.properties for command $QCBIN/sickle pe -f ... 
+bpipe.Dependencies	INFO	|1:20:58 Context 175037684 for stage qtrim has resolved inputs [Read1.gz, Read2.gz] 
+bpipe.Dependencies	INFO	|1:20:58 Saving output file details to file .bpipe/outputs/qtrim.Read1.gz.3.qtrim.properties for command $QCBIN/sickle pe -f ... 
+bpipe.PipelineStage	INFO	|1:20:58 Checking files: [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:58 Checking [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.qtrim 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.2.qtrim 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.3.qtrim 
+bpipe.PipelineContext	INFO	|1:20:58 Setting output [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] on context 1905880395 in thread 1 
+bpipe.PipelineStage	INFO	|1:20:58 Setting next inputs [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] on stage 1995382092, context 1905880395 in thread 1 
+bpipe.PipelineStage	INFO	|1:20:58 Checking files: [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:58 Checking [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.qtrim 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.2.qtrim 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.3.qtrim 
+bpipe.Dependencies	INFO	|1:20:58 Checking [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.qtrim 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.2.qtrim 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.3.qtrim 
+bpipe.PipelineCategory	INFO	|1:20:58 Next inputs from stage = [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.PipelineCategory	INFO	|1:20:58 Checking inputs for next stage:  [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:58 Checking [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.qtrim 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.2.qtrim 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.3.qtrim 
+bpipe.Dependencies	INFO	|1:20:58 Checking [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.qtrim 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.2.qtrim 
+bpipe.Dependencies	INFO	|1:20:58  Checking file Read1.gz.3.qtrim 
+bpipe.PipelineStage	INFO	|1:20:58 Stage baseqc1 : INPUT=[Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] OUTPUT=Read1.gz.qtrim.baseqc1 
+bpipe.PipelineDelegate	INFO	|1:20:58 Input 1 reference resolved by PipelineDelegate 
+bpipe.PipelineInput	INFO	|1:20:58 Searching for missing property: qtrim 
+bpipe.PipelineInput	INFO	|1:20:58 Checking outputs [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.PipelineInput	INFO	|1:20:58 Found files with exts [qtrim] : [[Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim]] 
+bpipe.PipelineInput	INFO	|1:20:58 Adding resolved input Read1.gz.qtrim 
+bpipe.PipelineContext	INFO	|1:20:58 Tracking outputs referenced=[[]] inferred=[[]] for command  $QCBIN/QC_reads_fastq Read1.gz.qtrim 
+bpipe.PipelineContext	INFO	|1:20:58 Checking actual resolved inputs [Read1.gz.qtrim] 
+bpipe.CommandManager	INFO	|1:20:58 Checking for configuration for command $QCBIN/QC_reads_fastq 
+bpipe.CommandManager	INFO	|1:20:58 Default command properties: [executor:local] 
+bpipe.CommandManager	INFO	|1:20:58 Using config [executor:local] for command 
+bpipe.CommandManager	INFO	|1:20:58 Created bpipe command id 4 
+bpipe.Concurrency	INFO	|1:20:58 Thread main requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	INFO	|1:20:58 Thread main acquired resource threads in amount 1 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Waiting for command to complete before releasing 1 resources 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Releasing 1 resources 
+bpipe.Concurrency	INFO	|1:20:58 Thread main releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Released 1 resources 
+bpipe.PipelineDelegate	INFO	|1:20:58 Input 2 reference resolved by PipelineDelegate 
+bpipe.PipelineInput	INFO	|1:20:58 Searching for missing property: qtrim 
+bpipe.PipelineInput	INFO	|1:20:58 Checking outputs [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.PipelineInput	INFO	|1:20:58 Found files with exts [qtrim] : [[Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim]] 
+bpipe.PipelineInput	INFO	|1:20:58 Adding resolved input Read1.gz.2.qtrim 
+bpipe.PipelineContext	INFO	|1:20:58 Tracking outputs referenced=[[]] inferred=[[]] for command  $QCBIN/QC_reads_fastq Read1.gz.2.qtrim 
+bpipe.PipelineContext	INFO	|1:20:58 Checking actual resolved inputs [Read1.gz.qtrim] 
+bpipe.CommandManager	INFO	|1:20:58 Checking for configuration for command $QCBIN/QC_reads_fastq 
+bpipe.CommandManager	INFO	|1:20:58 Default command properties: [executor:local] 
+bpipe.CommandManager	INFO	|1:20:58 Using config [executor:local] for command 
+bpipe.CommandManager	INFO	|1:20:58 Created bpipe command id 5 
+bpipe.Concurrency	INFO	|1:20:58 Thread main requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	INFO	|1:20:58 Thread main acquired resource threads in amount 1 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Waiting for command to complete before releasing 1 resources 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Releasing 1 resources 
+bpipe.Concurrency	INFO	|1:20:58 Thread main releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:58 Released 1 resources 
+bpipe.PipelineDelegate	INFO	|1:20:58 Input 3 reference resolved by PipelineDelegate 
+bpipe.PipelineInput	INFO	|1:20:58 Searching for missing property: qtrim 
+bpipe.PipelineInput	INFO	|1:20:58 Checking outputs [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.PipelineInput	INFO	|1:20:58 Found files with exts [qtrim] : [[Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim]] 
+bpipe.PipelineInput	INFO	|1:20:58 Adding resolved input Read1.gz.3.qtrim 
+bpipe.PipelineContext	INFO	|1:20:58 Tracking outputs referenced=[[]] inferred=[[]] for command  $QCBIN/QC_reads_fastq Read1.gz.3.qtrim 
+bpipe.PipelineContext	INFO	|1:20:58 Checking actual resolved inputs [Read1.gz.qtrim] 
+bpipe.CommandManager	INFO	|1:20:58 Checking for configuration for command $QCBIN/QC_reads_fastq 
+bpipe.CommandManager	INFO	|1:20:58 Default command properties: [executor:local] 
+bpipe.CommandManager	INFO	|1:20:58 Using config [executor:local] for command 
+bpipe.CommandManager	INFO	|1:20:58 Created bpipe command id 6 
+bpipe.Concurrency	INFO	|1:20:58 Thread main requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	INFO	|1:20:58 Thread main acquired resource threads in amount 1 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:59 Waiting for command to complete before releasing 1 resources 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:59 Releasing 1 resources 
+bpipe.Concurrency	INFO	|1:20:59 Thread main releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|1:20:59 Released 1 resources 
+bpipe.PipelineStage	INFO	|1:20:59 Stage baseqc1 returned null as default inputs for next stage 
+bpipe.PipelineStage	INFO	|1:20:59 Removing inferred outputs matching [\.bai$, \.log$] 
+bpipe.PipelineStage	INFO	|1:20:59 Inferring nextInputs from inputs bpipe.PipelineContext@4852c063.@input 
+bpipe.PipelineContext	INFO	|1:20:59 Setting output [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] on context 1213382755 in thread 1 
+bpipe.PipelineStage	INFO	|1:20:59 Setting next inputs [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] on stage 819251373, context 1213382755 in thread 1 
+bpipe.PipelineStage	INFO	|1:20:59 Checking files: [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:59 Checking [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:59  Checking file Read1.gz.qtrim 
+bpipe.Dependencies	INFO	|1:20:59  Checking file Read1.gz.2.qtrim 
+bpipe.Dependencies	INFO	|1:20:59  Checking file Read1.gz.3.qtrim 
+bpipe.PipelineContext	INFO	|1:20:59 Setting output [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] on context 1640165094 in thread 1 
+bpipe.PipelineStage	INFO	|1:20:59 Setting next inputs [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] on stage 654804184, context 1640165094 in thread 1 
+bpipe.PipelineStage	INFO	|1:20:59 Checking files: [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:59 Checking [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:59  Checking file Read1.gz.qtrim 
+bpipe.Dependencies	INFO	|1:20:59  Checking file Read1.gz.2.qtrim 
+bpipe.Dependencies	INFO	|1:20:59  Checking file Read1.gz.3.qtrim 
+bpipe.Pipeline	INFO	|1:20:59 Finished running segment for inputs null 
+bpipe.Dependencies	INFO	|1:20:59 Reading property file .bpipe/outputs/qtrim.Read1.gz.qtrim.properties 
+bpipe.Dependencies	INFO	|1:20:59 Reading property file .bpipe/outputs/qtrim.Read1.gz.2.qtrim.properties 
+bpipe.Dependencies	INFO	|1:20:59 Reading property file .bpipe/outputs/qtrim.Read1.gz.3.qtrim.properties 
+bpipe.Dependencies	INFO	|1:20:59 External inputs: [[Read1.gz, Read2.gz], [Read1.gz, Read2.gz], [Read1.gz, Read2.gz]] for outputs [Read1.gz.qtrim, Read1.gz.2.qtrim, Read1.gz.3.qtrim] 
+bpipe.Dependencies	INFO	|1:20:59 There are 1 output groups 
+bpipe.Dependencies	INFO	|1:20:59 Subtracting 3 remaining outputs from 3 total outputs 
+bpipe.Dependencies	INFO	|1:20:59 There are 0 remaining outputs 
+bpipe.Dependencies	INFO	|1:20:59 --- Read1.gz.qtrim / entry 622419092 --- 
+bpipe.Dependencies	INFO	|1:20:59 Read1.gz.qtrim is newer than input files 
+bpipe.Dependencies	INFO	|1:20:59 -- Read1.gz.2.qtrim / entry 622419092 -- 
+bpipe.Dependencies	INFO	|1:20:59 Read1.gz.2.qtrim is newer than input files 
+bpipe.Dependencies	INFO	|1:20:59 -- Read1.gz.3.qtrim / entry 622419092 -- 
+bpipe.Dependencies	INFO	|1:20:59 Read1.gz.3.qtrim is newer than input files 
+bpipe.Dependencies	INFO	|1:20:59 ====Finished Output Graph===== 
+bpipe.Pipeline	INFO	|1:20:59 Outputs are: 
+		Read1.gz.qtrim
+		Read1.gz.2.qtrim
+		Read1.gz.3.qtrim 

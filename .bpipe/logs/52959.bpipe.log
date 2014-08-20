@@ -1,0 +1,47 @@
+bpipe.Runner	INFO	|5:09:00 Starting 
+bpipe.Runner	INFO	|5:09:00 OS: Linux (3.5.0-51-generic) Java: 1.7.0_55 Vendor: Oracle Corporation 
+bpipe.Config	INFO	|5:09:00 No local configuration file found 
+bpipe.ToolDatabase	INFO	|5:09:00 Loading tool database from user configuration 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool samtools 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool bwa 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool bowtie 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool fastqc 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool coverageBed 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool fastx_clipper 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool convert2annovar.pl 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool summarize_annovar.pl 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool bowtie2 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool GenomeAnalysisTK 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool MarkDuplicates 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool signalp 
+bpipe.Tool	INFO	|5:09:00 Configured meta data about tool ls 
+bpipe.Runner	INFO	|5:09:01 No CLI parameters specified 
+bpipe.Pipeline	INFO	|5:09:01 Running with input null 
+bpipe.PipelineCategory	INFO	|5:09:01 Found closure variable test 
+bpipe.Pipeline	WARNING	|5:09:01 Pipeline folder /home/km/bpipes could not be found 
+bpipe.Pipeline	INFO	|5:09:01 Running segment with inputs null 
+bpipe.Dependencies	INFO	|5:09:01 Checking null 
+bpipe.PipelineStage	INFO	|5:09:01 Stage test : INPUT=null OUTPUT=test 
+bpipe.PipelineContext	INFO	|5:09:01 Tracking outputs referenced=[[]] inferred=[[]] for command echo ${QCBIN} 
+bpipe.PipelineContext	INFO	|5:09:01 Checking actual resolved inputs [] 
+bpipe.CommandManager	INFO	|5:09:01 Checking for configuration for command echo 
+bpipe.CommandManager	INFO	|5:09:01 Default command properties: [executor:local] 
+bpipe.CommandManager	INFO	|5:09:01 Using config [executor:local] for command 
+bpipe.CommandManager	INFO	|5:09:01 Created bpipe command id 1 
+bpipe.Concurrency	INFO	|5:09:01 Creating thread pool with 32 threads to execute parallel pipelines 
+bpipe.Concurrency	INFO	|5:09:01 Thread main requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	INFO	|5:09:01 Thread main acquired resource threads in amount 1 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|5:09:01 Waiting for command to complete before releasing 1 resources 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|5:09:01 Releasing 1 resources 
+bpipe.Concurrency	INFO	|5:09:01 Thread main releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	INFO	|5:09:01 Released 1 resources 
+bpipe.PipelineStage	INFO	|5:09:01 Stage test returned null as default inputs for next stage 
+bpipe.PipelineStage	INFO	|5:09:01 Removing inferred outputs matching [\.bai$, \.log$] 
+bpipe.PipelineStage	INFO	|5:09:01 Inferring nextInputs from inputs bpipe.PipelineContext@32defd4f.@input 
+bpipe.PipelineContext	INFO	|5:09:01 Setting output null on context 853474639 in thread 1 
+bpipe.PipelineStage	INFO	|5:09:01 Setting next inputs null on stage 1304979360, context 853474639 in thread 1 
+bpipe.PipelineStage	INFO	|5:09:01 Checking files: null 
+bpipe.Dependencies	INFO	|5:09:01 Checking null 
+bpipe.Pipeline	INFO	|5:09:01 Finished running segment for inputs null 
+bpipe.Pipeline	INFO	|5:09:01 No tracked output files from this run 
+bpipe.Runner	INFO	|5:09:01 Deleting job file /home/km/.bpipedb/jobs/52959 
