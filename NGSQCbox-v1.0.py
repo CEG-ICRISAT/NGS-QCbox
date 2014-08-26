@@ -7,6 +7,7 @@ def run(args):
     filename, prog = args
     fname, mininsertlength, maxinsertlength = filename.strip().split(':')
     environment = os.environ.copy()   
+    print(environment) 
     environment['MAX_INSERT_SIZE'] = maxinsertlength
     environment['MIN_INSERT_SIZE'] = mininsertlength
     p = sp.Popen(['bash', os.path.join(environment['QCBIN'], prog), filename], stdout=sp.PIPE, shell=False, env=environment)
@@ -41,14 +42,13 @@ if __name__ =='__main__':
         os.environ['BOWTIE2_INDEX_PATH'] = os.path.abspath(bowtie2_path)
         if os.environ['REFERENCE']  and  os.environ['GENOME_SIZE'] and os.environ['BOWTIE2_INDEX_PATH']:
             prog = 'batchqc_complete.sh'
-            
         else:
             raise SystemExit('You failed to provide required reference/size/bowtie2 index path')
     else:
         raise SystemExit('Choice invalid ! cannot run QC')
-
     #fastq_path = os.path.abspath(raw_input('Enter data folder path : '))
-    fastq_path = os.path.abspath('example')
+    #fastq_path = os.path.abspath('example')
+    fastq_path = os.environ['DATA_PATH'] =  '/home/km/Documents/manuscripts/NGS-QCbox_MS/NGS-QCbox-v1.0/example'
     #'/mnt/das/ngs/projects/QC_bin_test/test_data'     
     np = int(raw_input('Number of processors to use : '))
     samples_file = os.path.join(fastq_path,'samples.txt')

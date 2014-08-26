@@ -24,39 +24,37 @@ exec """ echo \$GENOME_SIZE"""
 exec """ echo \$MAX_INSERT_SIZE"""
 exec """ echo \$MIN_INSERT_SIZE"""
 exec """ echo \$BOWTIE2_INDEX_PATH"""
-	exec """ \$QCBIN/bowtie2 -p 10 --end-to-end -I 400 -X 600 -x example/phix_index -1 $input1 -2 $input2 -U $input3 -S $output """
+	exec """ \$(echo $QCBIN/bowtie2) -p 10 --end-to-end -I \$(echo $MIN_INSERT_SIZE) -X \$(echo $MAX_INSERT_SIZE) -x \$(echo $BOWTIE2_INDEX_PATH) -1 $input1 -2 $input2 -U $input3 -S $output """
 }
 
 bam = {
-        exec """ \$QCBIN/samtools view -bSu Read1.gz.qtrim.sam | \$QCBIN/samtools sort -o - - > $output"""
+        exec """ \$(echo $QCBIN/samtools) view -bSu $input | \$(echo $QCBIN/samtools) sort -o - - > $output"""
+}
+bam1 = {
+           exec """ \$(echo $QCBIN/samtools) view -bSu $input | \$(echo $QCBIN/samtools) sort - -f $output"""
 }
 
 bai = {
-   exec """ \$QCBIN/samtools index $input"""
-   forward input
+     exec """ \$(echo $QCBIN/samtools)  index  $input"""
+     forward input
 }
 
 read_depths = {
-    exec """ \$QCBIN/bedtools genomecov -bga -ibam $input  > $output.bed """
+            from('.bam'){
+                exec """ \$(echo $QCBIN/bedtools) genomecov -bga -ibam $input  > $output.bed """
+            }
 }
 
 coverage = {
-    exec """ \$QCBIN/genome_cov.py $input.bed  \$GENOME_SIZE """
+    exec """ \$(echo $QCBIN/genome_cov.py) $input.bed  \$(echo $GENOME_SIZE) """
 }
 
 variant_calling = {
-    exec """ \$QCBIN/samtools mpileup -uf \$REFERENCE $input | \$QCBIN/bcftools view -bvcg - > $output.bcf"""
+    exec """ \$(echo $QCBIN/samtools) mpileup -uf \$(echo $REFERENCE) $input | \$(echo $QCBIN/bcftools) view -bvcg - > $output.bcf"""
 }
 
 vcf = {
-exec """ \$QCBIN/bcftools view $input.bcf | \$QCBIN/vcfutils.pl varFilter > $output"""
-}
-test = {
-exec """ echo \$REFERENCE"""
-exec """ echo \$GENOME_SIZE"""
-exec """ echo \$MAX_INSERT_SIZE"""
-exec """ echo \$MIN_INSERT_SIZE"""
-exec """ echo \$BOWTIE2_INDEX_PATH"""
+exec """ \$(echo $QCBIN/bcftools) view $input.bcf | \$(echo $QCBIN/vcfutils.pl) varFilter > $output"""
 }
 
 Bpipe.run  { baseqc + qtrim + baseqc1 + sam + bam + bai + [read_depths + coverage , variant_calling + vcf]}

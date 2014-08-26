@@ -1,4 +1,10 @@
 #!/bin/bash
 export QCBIN=`pwd`/qcbin
-export REFERENCE=
+#export DATA_PATH=/home/km/Documents/manuscripts/NGS-QCbox_MS/NGS-QCbox-v1.0/example
+#export REFERENCE=$DATA_PATH/phix.fa
+#export GENOME_SIZE=5386
+#export BOWTIE2_INDEX_PATH=$DATA_PATH/phix_index
+#export MIN_INSERT_SIZE=400
+#export MAX_INSERT_SIZE=600
+
 

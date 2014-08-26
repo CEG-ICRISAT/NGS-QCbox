@@ -1,24 +1,22 @@
 
 baseqc = {
     from('Read1.gz', 'Read2.gz'){
-        exec  """ \$QCBIN/QC_reads_gz  Read1.gz"""
-        exec  """ \$QCBIN/QC_reads_gz  Read2.gz"""
+        exec  """ \$QCBIN/QC_reads_gz Read1.gz"""
+        exec  """ \$QCBIN/QC_reads_gz Read2.gz"""
     }
 }
 
 qtrim = {
     from('Read1.gz', 'Read2.gz'){
-            exec """ \$QCBIN/sickle pe -f <(zcat $input1) -r <(zcat $input2) -o $output1.qtrim -p $output2.qtrim -s $output3.qtrim  -l 50 -n -t sanger """
+            exec """ \$QCBIN/sickle pe -f <(zcat $input1) -r <(zcat $input2) -o $output1 -p $output2 -s $output3  -l 50 -n -t sanger """
     }
 }
 
 baseqc1 = {
-        exec """ \$QCBIN/QC_reads_fastq $input1.qtrim"""
-        exec """ \$QCBIN/QC_reads_fastq $input2.qtrim"""
-        exec """ \$QCBIN/QC_reads_fastq $input3.qtrim"""
-}
-test = {
-   exec """echo \$REFERENCE"""
+        exec "\$QCBIN/QC_reads_fastq $input1.qtrim"
+        exec "\$QCBIN/QC_reads_fastq $input2.qtrim"
+        exec "\$QCBIN/QC_reads_fastq $input3.qtrim"
+        forward input
 }
 
-Bpipe.run  { test + baseqc + qtrim + baseqc1 }
+Bpipe.run  { baseqc + qtrim + baseqc1 }

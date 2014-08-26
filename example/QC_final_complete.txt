@@ -1,2 +1,2 @@
 Sample	Read pairs in millions	Read pairs after QC	% Read pairs retained	% Read Aligned	genome coverage at >= 1x	genome coverage at >= 2x	genome coverage at >= 5x	genome coverage at >= 10x	genome coverage at >= 15x	Bases not covered	Average depth	Insert Size Range
-A	0	0	86.41									400-600
+A	0	0	86.41	85.16%	99.03	96.12	79.54	18.49	0.15	(0.97%)	6.83	400-600
