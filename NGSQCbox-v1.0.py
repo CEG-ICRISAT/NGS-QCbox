@@ -7,7 +7,6 @@ def run(args):
     filename, prog = args
     fname, mininsertlength, maxinsertlength = filename.strip().split(':')
     environment = os.environ.copy()   
-    print(environment) 
     environment['MAX_INSERT_SIZE'] = maxinsertlength
     environment['MIN_INSERT_SIZE'] = mininsertlength
     p = sp.Popen(['bash', os.path.join(environment['QCBIN'], prog), filename], stdout=sp.PIPE, shell=False, env=environment)
@@ -30,15 +29,15 @@ if __name__ =='__main__':
     if choice == 1:
         prog = 'batchqc_quick.sh'
     elif choice == 2:
-        #reference_path = raw_input('Enter reference fasta full path: ')
-        reference_path = 'example/phix.fa' 
+        reference_path = raw_input('Enter reference fasta full path: ') or 'example/phix.fa'
+        #reference_path = 'example/phix.fa' 
         os.environ['REFERENCE'] = os.path.abspath(reference_path)
-        #genome_size = raw_input('Enter the reference genome size: ')
-        genome_size = '5386'
+        genome_size = raw_input('Enter the reference genome size: ') or '5386'
+        #genome_size = '5386'
         os.environ['GENOME_SIZE'] = genome_size
         
-        #bowtie2_path = raw_input('Enter bowtie2 index full path: ')
-        bowtie2_path = 'example/phix_index' 
+        bowtie2_path = raw_input('Enter bowtie2 index full path: ') or 'example/phix_index'
+        #bowtie2_path = 'example/phix_index' 
         os.environ['BOWTIE2_INDEX_PATH'] = os.path.abspath(bowtie2_path)
         if os.environ['REFERENCE']  and  os.environ['GENOME_SIZE'] and os.environ['BOWTIE2_INDEX_PATH']:
             prog = 'batchqc_complete.sh'
@@ -46,9 +45,9 @@ if __name__ =='__main__':
             raise SystemExit('You failed to provide required reference/size/bowtie2 index path')
     else:
         raise SystemExit('Choice invalid ! cannot run QC')
-    #fastq_path = os.path.abspath(raw_input('Enter data folder path : '))
+    fastq_path = os.path.abspath(raw_input('Enter data folder path : ') or '/home/km/Documents/manuscripts/NGS-QCbox_MS/NGS-QCbox-v1.0/example') 
     #fastq_path = os.path.abspath('example')
-    fastq_path = os.environ['DATA_PATH'] =  '/home/km/Documents/manuscripts/NGS-QCbox_MS/NGS-QCbox-v1.0/example'
+    os.environ['DATA_PATH'] =  fastq_path
     #'/mnt/das/ngs/projects/QC_bin_test/test_data'     
     np = int(raw_input('Number of processors to use : '))
     samples_file = os.path.join(fastq_path,'samples.txt')
@@ -60,5 +59,6 @@ if __name__ =='__main__':
 
     p = mp.Pool(np)
     p.map(run, samples)
+    #p.join()
     print("Run completed!")
 

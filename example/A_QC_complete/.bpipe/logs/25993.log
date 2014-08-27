@@ -1,0 +1,150 @@
+[----]	====================================================================================================
+[----]	|                              Starting Pipeline at 2014-08-27 16:40                               |
+[----]	====================================================================================================
+[]	
+[]	=========================================== Stage baseqc ===========================================
+[0.1]	File name : Read1.gz
+[0.1]	Total bases : 26500
+[0.1]	total reads : 265
+[0.1]	% bases >=Q20 : 86.453
+[0.1]	% bases >=Q30 : 77.875
+[0.1]	Average read length : 100.000
+[0.1]	Read length range : 100 .. 100
+[0.1]	Quality range : 33 .. 74
+[0.1]	Phred range : 0 .. 41
+[0.1]	Offset : 33
+[0.1]	A : 6939
+[0.1]	T : 7427
+[0.1]	G : 6154
+[0.1]	C : 5979
+[0.1]	N : 1
+[0.1]	percent G-C content : 45.785
+[0.2]	File name : Read2.gz
+[0.2]	Total bases : 26500
+[0.2]	total reads : 265
+[0.2]	% bases >=Q20 : 78.566
+[0.2]	% bases >=Q30 : 68.981
+[0.2]	Average read length : 100.000
+[0.2]	Read length range : 100 .. 100
+[0.2]	Quality range : 33 .. 74
+[0.2]	Phred range : 0 .. 41
+[0.2]	Offset : 33
+[0.2]	A : 6997
+[0.2]	T : 7329
+[0.2]	G : 6078
+[0.2]	C : 6096
+[0.2]	N : 0
+[0.2]	percent G-C content : 45.940
+[]	
+[]	=========================================== Stage qtrim ============================================
+[0.3]	FastQ paired records kept: 458 (229 pairs)
+[0.3]	FastQ single records kept: 34 (from PE1: 33, from PE2: 1)
+[0.3]	FastQ paired records discarded: 4 (2 pairs)
+[0.3]	FastQ single records discarded: 34 (from PE1: 1, from PE2: 33)
+[]	
+[]	========================================== Stage baseqc1 ===========================================
+[0.4]	File name : Read1.gz.qtrim
+[0.4]	Total bases : 21101
+[0.4]	total reads : 229
+[0.4]	% bases >=Q20 : 88.451
+[0.4]	% bases >=Q30 : 80.257
+[0.4]	Average read length : 92.144
+[0.4]	Read length range : 53 .. 100
+[0.4]	Quality range : 33 .. 74
+[0.4]	Phred range : 0 .. 41
+[0.4]	Offset : 33
+[0.4]	A : 5455
+[0.4]	T : 5982
+[0.4]	G : 4917
+[0.4]	C : 4747
+[0.4]	N : 0
+[0.4]	percent G-C content : 45.799
+[0.5]	File name : Read1.gz.2.qtrim
+[0.5]	Total bases : 18841
+[0.5]	total reads : 229
+[0.5]	% bases >=Q20 : 82.915
+[0.5]	% bases >=Q30 : 73.871
+[0.5]	Average read length : 82.275
+[0.5]	Read length range : 50 .. 100
+[0.5]	Quality range : 33 .. 74
+[0.5]	Phred range : 0 .. 41
+[0.5]	Offset : 33
+[0.5]	A : 4984
+[0.5]	T : 5244
+[0.5]	G : 4268
+[0.5]	C : 4345
+[0.5]	N : 0
+[0.5]	percent G-C content : 45.714
+[0.6]	File name : Read1.gz.3.qtrim
+[0.6]	Total bases : 3217
+[0.6]	total reads : 34
+[0.6]	% bases >=Q20 : 88.094
+[0.6]	% bases >=Q30 : 79.049
+[0.6]	Average read length : 94.618
+[0.6]	Read length range : 73 .. 100
+[0.6]	Quality range : 33 .. 74
+[0.6]	Phred range : 0 .. 41
+[0.6]	Offset : 33
+[0.6]	A : 899
+[0.6]	T : 838
+[0.6]	G : 728
+[0.6]	C : 752
+[0.6]	N : 0
+[0.6]	percent G-C content : 46.006
+[]	
+[]	============================================ Stage sam =============================================
+[0.7]	/home/km/Documents/manuscripts/NGS-QCbox_MS/NGS-QCbox-v1.0/example/phix.fa
+[0.8]	5386
+[0.9]	600
+[0.10]	400
+[0.11]	/home/km/Documents/manuscripts/NGS-QCbox_MS/NGS-QCbox-v1.0/example/phix_index
+[0.12]	263 reads; of these:
+[0.12]	  229 (87.07%) were paired; of these:
+[0.12]	    34 (14.85%) aligned concordantly 0 times
+[0.12]	    195 (85.15%) aligned concordantly exactly 1 time
+[0.12]	    0 (0.00%) aligned concordantly >1 times
+[0.12]	    ----
+[0.12]	    34 pairs aligned concordantly 0 times; of these:
+[0.12]	      0 (0.00%) aligned discordantly 1 time
+[0.12]	    ----
+[0.12]	    34 pairs aligned 0 times concordantly or discordantly; of these:
+[0.12]	      68 mates make up the pairs; of these:
+[0.12]	        68 (100.00%) aligned 0 times
+[0.12]	        0 (0.00%) aligned exactly 1 time
+[0.12]	        0 (0.00%) aligned >1 times
+[0.12]	  34 (12.93%) were unpaired; of these:
+[0.12]	    5 (14.71%) aligned 0 times
+[0.12]	    29 (85.29%) aligned exactly 1 time
+[0.12]	    0 (0.00%) aligned >1 times
+[0.12]	85.16% overall alignment rate
+[]	
+[]	============================================ Stage bam =============================================
+[0.13]	[samopen] SAM header is present: 1 sequences.
+[0.13]	[bam_header_read] EOF marker is absent. The input is probably truncated.
+[]	
+[]	============================================ Stage bai =============================================
+[1]	
+[1]	====================================== Stage read_depths [1] =======================================
+[2]	
+[2]	==================================== Stage variant_calling [2] =====================================
+[2.15]	[mpileup] 1 samples in 1 input files
+[1]	
+[1]	======================================== Stage coverage [1] ========================================
+[1.17]	genome coverage at >= 1x : 99.03 % covered
+[1.17]	genome coverage at >=2 x : 96.12 % covered
+[1.17]	genome coverage at >= 5x :79.54 % covered
+[1.17]	genome coverage at >= 10x : 18.49 %covered
+[1.17]	genome coverage at >= 15x : 0.15 % covered
+[1.17]	bases not covered 52 : (0.97%)
+[1.17]	Avg depth : 6.83
+[1.17]	total bases 5386  genome_size 5386
+[2.15]	<mpileup> Set max per-file depth to 8000
+[2.15]	[afs] 0:54.327 1:408.742 2:4853.930
+[2]	
+[2]	========================================== Stage vcf [2] ===========================================
+
+======================================== Pipeline Finished =========================================
+[]	16:40:29 MSG:  Finished at Wed Aug 27 16:40:29 IST 2014
+[]	16:40:29 MSG:  Outputs are: 
+[]			Read1.gz.qtrim.sam.read_depths.bed
+[]			Read1.gz.qtrim.sam.variant_calling.bcf.vcf

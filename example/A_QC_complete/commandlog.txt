@@ -1,0 +1,34 @@
+
+####################################################################################################
+# Starting pipeline at Wed Aug 27 16:40:25 IST 2014
+# Input files:  null
+# Output Log:  .bpipe/logs/25993.log
+# Stage baseqc
+$QCBIN/QC_reads_gz Read1.gz
+$QCBIN/QC_reads_gz Read2.gz
+# Stage qtrim
+$QCBIN/sickle pe -f <(zcat Read1.gz) -r <(zcat Read2.gz) -o Read1.gz.qtrim -p Read1.gz.2.qtrim -s Read1.gz.3.qtrim  -l 50 -n -t sanger
+# Stage baseqc1
+$QCBIN/QC_reads_fastq Read1.gz.qtrim
+$QCBIN/QC_reads_fastq Read1.gz.2.qtrim
+$QCBIN/QC_reads_fastq Read1.gz.3.qtrim
+# Stage sam
+echo $REFERENCE
+echo $GENOME_SIZE
+echo $MAX_INSERT_SIZE
+echo $MIN_INSERT_SIZE
+echo $BOWTIE2_INDEX_PATH
+$(echo $QCBIN/bowtie2) -p 10 --end-to-end -I $(echo $MIN_INSERT_SIZE) -X $(echo $MAX_INSERT_SIZE) -x $(echo $BOWTIE2_INDEX_PATH) -1 Read1.gz.qtrim -2 Read1.gz.2.qtrim -U Read1.gz.3.qtrim -S Read1.gz.qtrim.sam
+# Stage bam
+$(echo $QCBIN/samtools) view -bSu Read1.gz.qtrim.sam | $(echo $QCBIN/samtools) sort -o - - > Read1.gz.qtrim.sam.bam
+# Stage bai
+$(echo $QCBIN/samtools)  index  Read1.gz.qtrim.sam.bam
+# Stage read_depths [1]
+# Stage variant_calling [2]
+$(echo $QCBIN/samtools) mpileup -uf $(echo $REFERENCE) Read1.gz.qtrim.sam.bam | $(echo $QCBIN/bcftools) view -bvcg - > Read1.gz.qtrim.sam.variant_calling.bcf
+$(echo $QCBIN/bedtools) genomecov -bga -ibam Read1.gz.qtrim.sam.bam  > Read1.gz.qtrim.sam.read_depths.bed
+# Stage coverage [1]
+$(echo $QCBIN/genome_cov.py) Read1.gz.qtrim.sam.read_depths.bed  $(echo $GENOME_SIZE)
+# Stage vcf [2]
+$(echo $QCBIN/bcftools) view Read1.gz.qtrim.sam.variant_calling.bcf | $(echo $QCBIN/vcfutils.pl) varFilter > Read1.gz.qtrim.sam.variant_calling.bcf.vcf
+
