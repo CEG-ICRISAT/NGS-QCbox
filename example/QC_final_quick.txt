@@ -1,2 +1,0 @@
-Sample	Read pairs in millions	Read pairs after QC	% Read pairs retained	Insert Size Range
-A	0	0	86.41	400-600
