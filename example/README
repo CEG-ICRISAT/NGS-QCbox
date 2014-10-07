@@ -1,0 +1,3 @@
+A_R?.fastq.gz are the 100bp paired end reads of chickpea generated using ART simulator at 10X coverage.
+"samples.txt" is the config file for samples you are going to process. In this examples "A" is the prefix of the sample. This format id followed.
+

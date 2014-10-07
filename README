@@ -1,4 +1,6 @@
 NGS-QCbox v1.0
+NGS-QCbox: A Parallel, Automated and Rapid Quality Control Pipeline for analysing the big data of NGS.
+
 A QC tool box for Next generation sequencing data of Illumina HiSeq and MiSeq
 
 authors: KAVS Krishna Mohan, Aamir W Khan, Dadakhalandar Doddamani and Rajeev K Varshney
@@ -47,6 +49,7 @@ NGSQCbox-v1.0.py is the main script that parallelizes the tasks for multiple sam
 
 PREREQUISITES
 Remember to set the path for reference (fasta format), bowtie2-index  and genome size in the complete_qc.bpipe / quick_qc.bpipe in qcbin dir.
+Insert sizes need to be included in a formatted text file called ‘samples.txt’. 
 
 ASSUMPTIONS
 -The input fastq files are gzip compressed format (*.fastq.gz).

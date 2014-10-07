@@ -54,9 +54,9 @@ p2=`head -3 detailed_qc_quick.txt | tail -1 | awk '{print $5}'`
 COUNTER=$(expr $COUNTER '+' 1)
 #echo -e "$COUNTER \n"
 rm ./*.fastq.gz ./Read*.gz
-gzip Read1.gz.qtrim
-gzip Read1.gz.2.qtrim
-gzip Read1.gz.3.qtrim
+#gzip Read1.gz.qtrim
+#gzip Read1.gz.2.qtrim
+#gzip Read1.gz.3.qtrim
 cic=`echo "$p2  * 100 / $p1 " | bc -l`
 p3=`echo "scale=2;$cic * 10/10" | bc -l`
 ne1=`echo "scale=3;$p1 / 1000000 " | bc -l`

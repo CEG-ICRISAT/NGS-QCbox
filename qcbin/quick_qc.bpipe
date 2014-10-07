@@ -1,10 +1,13 @@
-
 baseqc = {
     from('Read1.gz', 'Read2.gz'){
-        exec  """ \$QCBIN/QC_reads_gz Read1.gz"""
-        exec  """ \$QCBIN/QC_reads_gz Read2.gz"""
+        exec  """ \$QCBIN/raspberry Read1.gz"""
+        exec """ mv read_lengths.txt Read1_read_lengths.txt """
+        exec  """ \$QCBIN/raspberry Read2.gz"""
+        exec """ mv read_lengths.txt Read2_read_lengths.txt """
     }
 }
+
+
 
 qtrim = {
     from('Read1.gz', 'Read2.gz'){
@@ -13,10 +16,12 @@ qtrim = {
 }
 
 baseqc1 = {
-        exec "\$QCBIN/QC_reads_fastq $input1.qtrim"
-        exec "\$QCBIN/QC_reads_fastq $input2.qtrim"
-        exec "\$QCBIN/QC_reads_fastq $input3.qtrim"
-        forward input
+        exec "\$QCBIN/raspberry $input1.qtrim"
+        exec """ mv read_lengths.txt Read1.qtrim_read_lengths.txt """
+        exec "\$QCBIN/raspberry $input2.qtrim"
+        exec """ mv read_lengths.txt Read2.qtrim_read_lengths.txt """
+        exec "\$QCBIN/raspberry $input3.qtrim"
+        exec """ mv read_lengths.txt Singleton.qtrim_read_lengths.txt """
 }
 
 Bpipe.run  { baseqc + qtrim + baseqc1 }
