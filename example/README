@@ -1,3 +1,17 @@
 A_R?.fastq.gz are the 100bp paired end reads of chickpea generated using ART simulator at 10X coverage.
 "samples.txt" is the config file for samples you are going to process. In this examples "A" is the prefix of the sample. This format id followed.
+The  files are available from iPlant (www.iplantcollborative.org)
+
+http://de.iplantcollaborative.org/dl/d/B1B7C2BB-0252-4B96-AA3C-2F28DA42A277/A_R1.fastq.gz
+http://de.iplantcollaborative.org/dl/d/655AE8D6-B88F-4612-A330-1EE747ECB1FF/A_R2.fastq.gz
+http://de.iplantcollaborative.org/dl/d/F88E2188-CF0D-4451-B56E-5FDE16E39797/B_R1.fastq.gz
+http://de.iplantcollaborative.org/dl/d/A59BC8E4-991C-4A41-8CE4-B79CC7D938BB/B_R2.fastq.gz
+
+
+
+
+
+
+
+
 
