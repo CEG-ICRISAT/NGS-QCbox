@@ -1,4 +1,5 @@
-h1 NGS-QCbox
+NGS-QCbox
+=========
 A Parallel, Automated and Rapid Quality Control Pipeline for analysing the big data of NGS.
 
 A QC tool box for Next generation sequencing data of Illumina HiSeq and MiSeq
