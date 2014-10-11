@@ -71,10 +71,10 @@ Insert sizes need to be included in a formatted text file called â€˜samples.txtâ
 ## DATASETS USED FOR TESTING
 The simulated paired end read datasets used for testing this software are the following public web-links
 ```
-http://de.iplantcollaborative.org/dl/d/B1B7C2BB-0252-4B96-AA3C-2F28DA42A277/A_R1.fastq.gz
-http://de.iplantcollaborative.org/dl/d/655AE8D6-B88F-4612-A330-1EE747ECB1FF/A_R2.fastq.gz
-http://de.iplantcollaborative.org/dl/d/F88E2188-CF0D-4451-B56E-5FDE16E39797/B_R1.fastq.gz
-http://de.iplantcollaborative.org/dl/d/A59BC8E4-991C-4A41-8CE4-B79CC7D938BB/B_R2.fastq.gz
+(http://de.iplantcollaborative.org/dl/d/B1B7C2BB-0252-4B96-AA3C-2F28DA42A277/A_R1.fastq.gz)
+(http://de.iplantcollaborative.org/dl/d/655AE8D6-B88F-4612-A330-1EE747ECB1FF/A_R2.fastq.gz)
+(http://de.iplantcollaborative.org/dl/d/F88E2188-CF0D-4451-B56E-5FDE16E39797/B_R1.fastq.gz)
+(http://de.iplantcollaborative.org/dl/d/A59BC8E4-991C-4A41-8CE4-B79CC7D938BB/B_R2.fastq.gz)
 ```
 ## RESULTS
 Quick mode run generates a folder by name [sample]_QC_quick and complete mode generates [sample]_QC_complete in the data path folder containing samples.
