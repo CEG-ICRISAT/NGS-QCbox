@@ -6,7 +6,10 @@ A QC tool box for Next generation sequencing data of Illumina HiSeq and MiSeq
 
 Authors: KAVS Krishna Mohan, Aamir W Khan, Dadakhalandar Doddamani and Rajeev K Varshney
 email: k.krishnamohan@cgiar.org, a.khan@cgiar.org, d.doddamani@cgiar.org, r.k.varshney@cgiar.org
-institution: ICRISAT, Patancheru, India
+
+Center of Excellence in Genomics
+
+ICRISAT, Hyderabad, India
 
 NGS-QCbox is a commandline pipeline that enables NGS quality control to be performed with ease. The outputs include base and read level statistics, genome coverage and variant infomation.
 
