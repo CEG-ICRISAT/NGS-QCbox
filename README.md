@@ -70,7 +70,7 @@ Insert sizes need to be included in a formatted text file called â€˜samples.txtâ
 - The samples to be analyzed are in a folder  - this is "data path" option in the menu
 - The quality range is assumed to be in phred+33 format.
 
-## (#DATASETS-USED-FOR-TESTING)
+## DATASETS USED FOR TESTING ##
 The simulated paired end read datasets used for testing this software are the following public web-links
 
 http://de.iplantcollaborative.org/dl/d/B1B7C2BB-0252-4B96-AA3C-2F28DA42A277/A_R1.fastq.gz
