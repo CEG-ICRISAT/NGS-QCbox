@@ -82,7 +82,8 @@ http://de.iplantcollaborative.org/dl/d/A59BC8E4-991C-4A41-8CE4-B79CC7D938BB/B_R2
 Quick mode run generates a folder by name [sample]_QC_quick and complete mode generates [sample]_QC_complete in the data path folder containing samples.
 
 -The pipeline generates two files namely, "detailed_qc_[complete|quick].txt"  and "QC_final_[complete|quick].txt"; depending on the quick/complete mode of the pipeline run.
-1. detailed_QC_[quick|complete].txt contains information on counts of reads, bases, read length range, counts of A/T/G/C/N, percentage of GC content and quality range
+
+1. detailed_QC_[quick|complete].txt contains information on counts of reads, bases, read length range, counts of A/T/G/C/N, percentage of GC content and quality range.
 
 2. QC_final_[quick|complete].txt summarizes the above information for all the samples. It contains in addition to  the  reads generated and retained after quality trimming, pecentage of alignment, genome coverage at 1X to 15X and mean read depth observed from alignment.
 
