@@ -1,3 +1,8 @@
+baseqc0 = {
+    from('Read1.gz', 'Read2.gz'){
+        exec  """ \$QCBIN/raspberry Read1.gz Read2.gz"""
+    }
+}
 baseqc = {
     from('Read1.gz', 'Read2.gz'){
         exec  """ \$QCBIN/raspberry Read1.gz"""
@@ -23,5 +28,8 @@ baseqc1 = {
         exec "\$QCBIN/raspberry $input3.qtrim"
         exec """ mv read_lengths.txt Singleton.qtrim_read_lengths.txt """
 }
+baseqc2 = {
+        exec "\$QCBIN/raspberry $input1.qtrim  $input2.qtrim $input3.qtrim"
+}
 
-Bpipe.run  { baseqc + qtrim + baseqc1 }
+Bpipe.run  { baseqc0 + qtrim + baseqc2}

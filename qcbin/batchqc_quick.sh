@@ -4,8 +4,8 @@ echo -e "Sample\tRead pairs in millions\tRead pairs after QC\t% Read pairs retai
 COUNTER=0
 line=$1
 name=$(echo $line | sed 's/:.*//g')
-min_ins=$(echo $line | sed 's/:/\t/g'| awk '{print $2}')
-max_ins=$(echo $line | sed 's/:/\t/g'| awk '{print $3}')
+#min_ins=$(echo $line | sed 's/:/\t/g'| awk '{print $2}')
+#max_ins=$(echo $line | sed 's/:/\t/g'| awk '{print $3}')
 
 #if [ ! -d "$name" ]; then
 #    echo "Folder: $name not found!"
@@ -15,10 +15,10 @@ max_ins=$(echo $line | sed 's/:/\t/g'| awk '{print $3}')
 mkdir $name\_QC_quick
 cd $name\_QC_quick
 cp ../$name*.gz .
-ln -s `ls | grep '.*R1.*.fastq.gz$'` Read1.gz
-ln -s `ls | grep '.*R2.*.fastq.gz$'` Read2.gz
-sed -i "s/\(MAX_INSERT_SIZE=\).*/\\1$max_ins/" $QCBIN/quick_qc.bpipe
-sed -i "s/\(MIN_INSERT_SIZE=\).*/\\1$min_ins/" $QCBIN/quick_qc.bpipe
+ln -s `ls | grep '.*_R1.*.fastq.gz$'` Read1.gz
+ln -s `ls | grep '.*_R2.*.fastq.gz$'` Read2.gz
+#sed -i "s/\(MAX_INSERT_SIZE=\).*/\\1$max_ins/" $QCBIN/quick_qc.bpipe
+#sed -i "s/\(MIN_INSERT_SIZE=\).*/\\1$min_ins/" $QCBIN/quick_qc.bpipe
 $QCBIN/bpipe/bin/bpipe run $QCBIN/quick_qc.bpipe > log 
 rea1=`grep -n '^File.*Read1.gz$' log | sed 's/:/ /' | awk '{print $1}'`
 rea11=`expr $rea1 + 15`
