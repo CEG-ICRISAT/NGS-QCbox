@@ -61,7 +61,13 @@ Number of processors to use :  <provide number of processors to use>
 ```
 Quick mode run is  similar, just choose option 1, at  menu (see above).
 NGSQCbox-v0.1.py, the Python script, is the main script that parallelizes the tasks for processing multiple samples generated from hiseq or miseq in batches.
-
+Note: While running quick mode, the sample sheet can be without min/max insert size values and so it looks as below
+```
+sample1::
+sample2::
+sample3::
+sample4::
+```
 ## PREREQUISITES
 Remember to set the path for reference (fasta format), bowtie2-index  and genome size in the complete_qc.bpipe / quick_qc.bpipe in qcbin dir.
 Insert sizes need to be included in a formatted text file called ‘samples.txt’. 
@@ -69,7 +75,7 @@ Insert sizes need to be included in a formatted text file called ‘samples.txt�
 ## ASSUMPTIONS
 - The samples to be analyzed are in a folder  - this is "data path" option in the menu
 - The quality range is assumed to be in phred+33 format.
-
+- The input FASTQ format file names are in a specific format - for example, sample1_R1.fastq.gz and sample1_R2.fastq.gz. (It is this "sample1"  prefix that goes into the samplesheet.txt file)
 ## DATASETS USED FOR TESTING ##
 The simulated paired end read datasets used for testing this software are the following public web-links
 
