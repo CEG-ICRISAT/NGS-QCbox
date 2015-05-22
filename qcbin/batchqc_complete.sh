@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -e "Sample\tRead pairs in millions\tRead pairs after QC\t% Read pairs retained\t% Read Aligned\tgenome coverage at >= 1x\tgenome coverage at >= 2x\tgenome coverage at >= 5x\tgenome coverage at >= 10x\tgenome coverage at >= 15x\tBases not covered\tAverage depth\tInsert Size Range" > QC_final_complete.txt
-COUNTER=0
+#COUNTER=0
 line=$1
 name=$(echo $line | sed 's/:.*//g')
 min_ins=$(echo $line | sed 's/:/\t/g'| awk '{print $2}')
@@ -14,9 +14,11 @@ max_ins=$(echo $line | sed 's/:/\t/g'| awk '{print $3}')
 
 mkdir $name\_QC_complete
 cd $name\_QC_complete
-cp ../$name*.gz .
-ln -s `ls | grep '.*R1.*.fastq.gz$'` Read1.gz
-ln -s `ls | grep '.*R2.*.fastq.gz$'` Read2.gz
+#cp ../$name*.gz .
+ln -s ../$name*R1*fastq.gz Read1.gz
+ln -s ../$name*R2*fastq.gz Read2.gz
+#ln -s `ls | grep '.*R1.*.fastq.gz$'` Read1.gz
+#ln -s `ls | grep '.*R2.*.fastq.gz$'` Read2.gz
 #sed -i "s/\(MAX_INSERT_SIZE=\).*/\\1$max_ins/" $QCBIN/complete_qc.bpipe
 #sed -i "s/\(MIN_INSERT_SIZE=\).*/\\1$min_ins/" $QCBIN/complete_qc.bpipe
 $QCBIN/bpipe/bin/bpipe run $QCBIN/complete_qc.bpipe > log
@@ -51,12 +53,12 @@ cp detailed_qc_complete.txt ../$name\_detailed_qc_complete.txt
 rm file*
 p1=`head -3 detailed_qc_complete.txt | tail -1 | awk '{print $3}'`
 p2=`head -3 detailed_qc_complete.txt | tail -1 | awk '{print $5}'`
-COUNTER=$(expr $COUNTER '+' 1)
+#COUNTER=$(expr $COUNTER '+' 1)
 #echo -e "$COUNTER \n"
-rm ./*.fastq.gz ./Read*.gz
-gzip Read1.gz.qtrim 
-gzip Read1.gz.2.qtrim 
-gzip Read1.gz.3.qtrim 
+#rm ./*.fastq.gz ./Read*.gz
+#gzip Read1.gz.qtrim 
+#gzip Read1.gz.2.qtrim 
+#gzip Read1.gz.3.qtrim 
 cic=`echo "$p2 * 100 / $p1 " | bc -l`
 p3=`echo "scale=2;$cic * 10/10 " | bc -l`
 ne1=`echo "scale=3;$p1 / 1000000 " | bc -l`

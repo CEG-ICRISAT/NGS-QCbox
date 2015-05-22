@@ -1,3 +1,9 @@
+baseqc0 = {
+    from('Read1.gz', 'Read2.gz'){
+        exec  """ \$QCBIN/raspberry Read1.gz Read2.gz"""
+    }
+}
+
 baseqc = {
     from('Read1.gz', 'Read2.gz'){
         exec  """ \$QCBIN/raspberry Read1.gz"""
@@ -7,11 +13,9 @@ baseqc = {
     }
 }
 
-
-
 qtrim = {
     from('Read1.gz', 'Read2.gz'){
-            exec """ \$QCBIN/sickle pe -f <(zcat $input1) -r <(zcat $input2) -o $output1 -p $output2 -s $output3  -l 50 -n -t sanger """
+            exec """ \$QCBIN/sickle pe -f <(zcat $input1) -r <(zcat $input2) -o $output1 -p $output2 -s $output3 -q 30 -l 50 -n -t sanger """
     }
 }
 
@@ -23,6 +27,11 @@ baseqc1 = {
         exec "\$QCBIN/raspberry $input3.qtrim"
         exec """ mv read_lengths.txt Singleton.qtrim_read_lengths.txt """
         forward input
+}
+
+baseqc2 = {
+        exec "\$QCBIN/raspberry $input1.qtrim  $input2.qtrim $input3.qtrim"
+	forward input
 }
 
 sam = {
@@ -64,4 +73,4 @@ vcf = {
 exec """ \$(echo $QCBIN/bcftools) view $input.bcf | \$(echo $QCBIN/vcfutils.pl) varFilter > $output"""
 }
 
-Bpipe.run  { baseqc + qtrim + baseqc1 + sam + bam + bai + [read_depths + coverage , variant_calling + vcf]}
+Bpipe.run  { baseqc0 + qtrim + baseqc2 + sam + bam + bai + [read_depths + coverage , variant_calling + vcf]}

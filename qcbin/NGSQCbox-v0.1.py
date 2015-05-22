@@ -2,7 +2,6 @@
 import multiprocessing as mp
 import subprocess as sp
 import os, sys
-
 def run(args):
     filename, prog = args
     fname, mininsertlength, maxinsertlength = filename.strip().split(':')
@@ -50,6 +49,7 @@ if __name__ =='__main__':
     os.environ['DATA_PATH'] =  fastq_path
     #'/mnt/das/ngs/projects/QC_bin_test/test_data'     
     np = int(raw_input('Number of processors to use : '))
+    os.environ['NPROCS'] = str(np)
     samples_file = os.path.join(fastq_path,'samples.txt')
     samples = []
     with open(samples_file) as  fh:
@@ -61,5 +61,7 @@ if __name__ =='__main__':
     output = p.map(run, samples)
     p.close()
     p.join()
+    from process_report import  summarize
+    summarize() 
     print("QC completed!")
 

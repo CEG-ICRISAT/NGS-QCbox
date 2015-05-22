@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "Sample\tRead pairs in millions\tRead pairs after QC\t% Read pairs retained\tInsert Size Range" > QC_final_quick.txt
+#echo -e "Sample\tRead pairs in millions\tRead pairs after QC\t% Read pairs retained\tInsert Size Range" > QC_final_quick.txt
 COUNTER=0
 line=$1
 name=$(echo $line | sed 's/:.*//g')
@@ -14,9 +14,10 @@ name=$(echo $line | sed 's/:.*//g')
 
 mkdir $name\_QC_quick
 cd $name\_QC_quick
-cp ../$name*.gz .
-ln -s `ls | grep '.*_R1.*.fastq.gz$'` Read1.gz
-ln -s `ls | grep '.*_R2.*.fastq.gz$'` Read2.gz
+#cp ../$name*.gz .
+ln -s ../$name*R1*fastq.gz Read1.gz
+ln -s ../$name*R2*fastq.gz Read2.gz
+#ln -s `ls | grep '.*_R2.*.fastq.gz$'` Read2.gz
 #sed -i "s/\(MAX_INSERT_SIZE=\).*/\\1$max_ins/" $QCBIN/quick_qc.bpipe
 #sed -i "s/\(MIN_INSERT_SIZE=\).*/\\1$min_ins/" $QCBIN/quick_qc.bpipe
 $QCBIN/bpipe/bin/bpipe run $QCBIN/quick_qc.bpipe > log 
@@ -49,17 +50,17 @@ echo -e "$name\tRead1\tRead2\tRead1 after QC\tRead2 after QC\tSingleton" >> deta
 cat file >> detailed_qc_quick.txt
 cp detailed_qc_quick.txt ../$name\_detailed_qc_quick.txt
 rm file*
-p1=`head -3 detailed_qc_quick.txt | tail -1 | awk '{print $3}'`
-p2=`head -3 detailed_qc_quick.txt | tail -1 | awk '{print $5}'`
-COUNTER=$(expr $COUNTER '+' 1)
-#echo -e "$COUNTER \n"
-rm ./*.fastq.gz ./Read*.gz
+##p1=`head -3 detailed_qc_quick.txt | tail -1 | awk '{print $3}'`
+##p2=`head -3 detailed_qc_quick.txt | tail -1 | awk '{print $5}'`
+##COUNTER=$(expr $COUNTER '+' 1)
+###echo -e "$COUNTER \n"
+#rm ./*.fastq.gz ./Read*.gz
 #gzip Read1.gz.qtrim
 #gzip Read1.gz.2.qtrim
 #gzip Read1.gz.3.qtrim
-cic=`echo "$p2  * 100 / $p1 " | bc -l`
-p3=`echo "scale=2;$cic * 10/10" | bc -l`
-ne1=`echo "scale=3;$p1 / 1000000 " | bc -l`
-ne2=`echo "scale=3;$p2 / 1000000 " | bc -l`
-echo -e "$name\t$ne1\t$ne2\t$p3\t$min_ins-$max_ins" >> ../QC_final_quick.txt
+##cic=`echo "$p2  * 100 / $p1 " | bc -l`
+##p3=`echo "scale=2;$cic * 10/10" | bc -l`
+##ne1=`echo "scale=3;$p1 / 1000000 " | bc -l`
+##ne2=`echo "scale=3;$p2 / 1000000 " | bc -l`
+##echo -e "$name\t$ne1\t$ne2\t$p3\t$min_ins-$max_ins" >> ../QC_final_quick.txt
 cd ../
