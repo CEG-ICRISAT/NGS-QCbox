@@ -1,11 +1,11 @@
 # NGS-QCbox
 
-A Parallel, Automated and Rapid Quality Control Pipeline for analysing the big data of NGS.
+NGS-QCbox and Raspberry for parallel, automated and rapid quality control analysis of large-scale next generation sequencing (Illumina) data
 
 A QC tool box for Next generation sequencing data of Illumina HiSeq and MiSeq
 
-Authors: KAVS Krishna Mohan, Aamir W Khan, Dadakhalandar Doddamani and Rajeev K Varshney
-email: k.krishnamohan@cgiar.org, a.khan@cgiar.org, d.doddamani@cgiar.org, r.k.varshney@cgiar.org
+Authors: KAVS Krishna Mohan, Aamir W Khan, Dadakhalandar Doddamani, Mahendar Thudi and Rajeev K Varshney
+email: k.krishnamohan@cgiar.org, a.khan@cgiar.org, d.doddamani@cgiar.org, t.mahendar@cgiar.org, r.k.varshney@cgiar.org
 
 Center of Excellence in Genomics
 
@@ -14,11 +14,12 @@ ICRISAT, Hyderabad, India
 NGS-QCbox is a commandline pipeline that enables NGS quality control to be performed with ease. The outputs include base and read level statistics, genome coverage and variant infomation.
 
 ## REQUIREMENTS
-Java 1.7 (preferrably 1.7.0_11)
-bash >= v4(assuming that you are working on Linux environment)
-Python >= v2.6
+```
+- Java 1.7 (preferrably 1.7.0_11). Java 1.8 is not supported.
+- bash >= v4(assuming that you are working on Linux environment)
+- Python >= v2.6
 (These are mostly  available on Linux platforms by default)
-
+```
 ## INSTALL
 ```
 git clone https://github.com/CEG-ICRISAT/NGS-QCbox.git
@@ -61,7 +62,13 @@ Number of processors to use :  <provide number of processors to use>
 ```
 Quick mode run is  similar, just choose option 1, at  menu (see above).
 NGSQCbox-v0.1.py, the Python script, is the main script that parallelizes the tasks for processing multiple samples generated from hiseq or miseq in batches.
-
+Note: While running quick mode, the sample sheet can be without min/max insert size values and so it looks as below
+```
+sample1::
+sample2::
+sample3::
+sample4::
+```
 ## PREREQUISITES
 Remember to set the path for reference (fasta format), bowtie2-index  and genome size in the complete_qc.bpipe / quick_qc.bpipe in qcbin dir.
 Insert sizes need to be included in a formatted text file called ‘samples.txt’. 
@@ -69,14 +76,13 @@ Insert sizes need to be included in a formatted text file called ‘samples.txt�
 ## ASSUMPTIONS
 - The samples to be analyzed are in a folder  - this is "data path" option in the menu
 - The quality range is assumed to be in phred+33 format.
+- The input FASTQ format file names are in a specific format - for example, sample1_R1.fastq.gz and sample1_R2.fastq.gz. (It is this "sample1"  prefix that goes into the samplesheet.txt file)
 
 ## DATASETS USED FOR TESTING ##
-The simulated paired end read datasets used for testing this software are the following public web-links
+The simulated paired end read datasets used for testing this software are available at the following public web-links
 
 http://de.iplantcollaborative.org/dl/d/B1B7C2BB-0252-4B96-AA3C-2F28DA42A277/A_R1.fastq.gz
 http://de.iplantcollaborative.org/dl/d/655AE8D6-B88F-4612-A330-1EE747ECB1FF/A_R2.fastq.gz
-http://de.iplantcollaborative.org/dl/d/F88E2188-CF0D-4451-B56E-5FDE16E39797/B_R1.fastq.gz
-http://de.iplantcollaborative.org/dl/d/A59BC8E4-991C-4A41-8CE4-B79CC7D938BB/B_R2.fastq.gz
 
 ## RESULTS
 Quick mode run generates a folder by name [sample]_QC_quick and complete mode generates [sample]_QC_complete in the data path folder containing samples.
