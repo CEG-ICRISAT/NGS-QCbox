@@ -93,11 +93,19 @@ Quick mode run generates a folder by name [sample]_QC_quick and complete mode ge
 
 2. QC_final_[quick|complete].txt summarizes the above information for all the samples. It contains in addition to  the  reads generated and retained after quality trimming, pecentage of alignment, genome coverage at 1X to 15X and mean read depth observed from alignment.
 
+## DOCKER image
+A docker based image containing NGS-QCBox  and Raspberry is provided for convenience to users. This image can be pulled from orangekatta/ngsqcbox:v0.2
+```
+docker pull orangekatta/ngsqcbox:v0.2
+```
+and find the latest  NGS-QCBox and Raspberry on  /data partition in the docker image
+For more information on using docker images please refer to docker.io documentation.
+
 ## DISCLAIMER
 -This tool has been tested on Linux platform only (ubuntu 12.10 and 14.04). It should work on any other linux flavour provided you have the tools in REQUIREMENTS section.
 
 ## LICENSE
 GPL v3
-A copy of GPL3 is included in the package
+A copy of GPLv3 is included in the package
 
 
