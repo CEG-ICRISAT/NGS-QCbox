@@ -15,7 +15,7 @@ if __name__ =='__main__':
     try: 
         print('QCBIN variable path set to '+ os.environ['QCBIN'])
     except KeyError:
-        raise SystemExit('Before you run NGSQCBox-vX.Y.py, please run "source sourcme.ngsqcbox" at shell prompt in the unzipped package to set $QCBIN variable!')
+        raise SystemExit('Before you run NGSQCBox-vX.Y.py, please run "source sourceme.ngsqcbox" at shell prompt in the unzipped package to set $QCBIN variable!')
     s = """
         NGSQCBox toolkit v 1.0
         ~~~~~~~~~~~~~~~~~~~~~~
@@ -26,19 +26,33 @@ if __name__ =='__main__':
     choice = int(raw_input(s))
      
     if choice == 1:
-        prog = 'batchqc_quick.sh'
+        phred_quality = raw_input('Enter minimum quality score cut-off: [20] ') or '20'
+        os.environ['QUALITY'] = os.path.abspath(phred_quality)
+        min_read_length = raw_input('Enter minimum read length post trimming: [50]') or '50'
+        os.environ['MIN_READ_LENGTH'] = os.path.abspath(min_read_length)
+        if os.environ['QUALITY']  and  os.environ['MIN_READ_LENGTH']:
+            prog = 'batchqc_quick.sh'
+        else:
+            raise SystemExit('You failed to provide required phred quality cut-off/minimum read length')
     elif choice == 2:
+        phred_quality = raw_input('Enter minimum quality score cut-off: [20] ') or '20'
+        os.environ['QUALITY'] = phred_quality
+        min_read_length = raw_input('Enter minimum read length post trimming: [50] ') or '50'
+        os.environ['MIN_READ_LENGTH'] = min_read_length
         reference_path = raw_input('Enter reference fasta full path: ') or 'example/phix.fa'
         #reference_path = 'example/phix.fa' 
         os.environ['REFERENCE'] = os.path.abspath(reference_path)
         genome_size = raw_input('Enter the reference genome size: ') or '5386'
         #genome_size = '5386'
         os.environ['GENOME_SIZE'] = genome_size
+        bowtie2_procs = raw_input('Enter the number of processors to be used by bowtie2: ') or '10'
+        #bowtie2_path = 'example/phix_index' 
+        os.environ['BOWTIE2_PROCS'] = bowtie2_procs
         
         bowtie2_path = raw_input('Enter bowtie2 index full path: ') or 'example/phix_index'
         #bowtie2_path = 'example/phix_index' 
         os.environ['BOWTIE2_INDEX_PATH'] = os.path.abspath(bowtie2_path)
-        if os.environ['REFERENCE']  and  os.environ['GENOME_SIZE'] and os.environ['BOWTIE2_INDEX_PATH']:
+        if os.environ['BOWTIE2_PROCS'] and  os.environ['QUALITY']  and  os.environ['MIN_READ_LENGTH'] and os.environ['REFERENCE']  and  os.environ['GENOME_SIZE'] and os.environ['BOWTIE2_INDEX_PATH']:
             prog = 'batchqc_complete.sh'
         else:
             raise SystemExit('You failed to provide required reference/size/bowtie2 index path')
@@ -64,4 +78,3 @@ if __name__ =='__main__':
     from process_report import  summarize
     summarize() 
     print("QC completed!")
-

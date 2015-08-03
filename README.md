@@ -33,7 +33,7 @@ $ unzip  NGS-QCBox-master.zip
  and then 
 ```
 $ cd NGS-QCbox
-$ source sourcme.ngsqcbox (This sets $QCBIN shell variable)
+$ source sourceme.ngsqcbox (This sets $QCBIN shell variable)
 ```
 Now navigate to the workspace containing data, data folder, (I assume the fastq files to be QCed are  in a dir called samples)
 prepare a file called 'samples.txt' with the format:
@@ -99,7 +99,7 @@ A docker based image containing NGS-QCBox  and Raspberry is provided for conveni
 docker pull orangekatta/ngsqcbox:v0.2
 ```
 and find the latest  NGS-QCBox and Raspberry on  /data partition in the docker image
-For more information on using docker images please refer to docker.io documentation.
+For more information on using docker images please refer to www.docker.com documentation. 
 
 ## DISCLAIMER
 -This tool has been tested on Linux platform only (ubuntu 12.10 and 14.04). It should work on any other linux flavour provided you have the tools in REQUIREMENTS section.

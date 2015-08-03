@@ -7,7 +7,7 @@ baseqc0 = {
 
 qtrim = {
     from('Read1.gz', 'Read2.gz'){
-            exec """ \$QCBIN/sickle pe -f <(zcat $input1) -r <(zcat $input2) -o $output1 -p $output2 -s $output3 -q 20 -l 50 -n -t sanger """
+            exec """ \$QCBIN/sickle pe -f <(zcat $input1) -r <(zcat $input2) -o $output1 -p $output2 -s $output3 -q \$(echo $QUALITY) -l \$(echo $MIN_READ_LENGTH) -n -t sanger """
     }
 }
 

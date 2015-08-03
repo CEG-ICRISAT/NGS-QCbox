@@ -15,7 +15,7 @@ baseqc = {
 
 qtrim = {
     from('Read1.gz', 'Read2.gz'){
-            exec """ \$QCBIN/sickle pe -f <(zcat $input1) -r <(zcat $input2) -o $output1 -p $output2 -s $output3 -q 30 -l 50 -n -t sanger """
+            exec """ \$QCBIN/sickle pe -f <(zcat $input1) -r <(zcat $input2) -o $output1 -p $output2 -s $output3 -q \$(echo $QUALITY) -l \$(echo $MIN_READ_LENGTH) -n -t sanger """
     }
 }
 
@@ -40,7 +40,7 @@ exec """ echo \$GENOME_SIZE"""
 exec """ echo \$MAX_INSERT_SIZE"""
 exec """ echo \$MIN_INSERT_SIZE"""
 exec """ echo \$BOWTIE2_INDEX_PATH"""
-	exec """ \$(echo $QCBIN/bowtie2) -p 10 --end-to-end -I \$(echo $MIN_INSERT_SIZE) -X \$(echo $MAX_INSERT_SIZE) -x \$(echo $BOWTIE2_INDEX_PATH) -1 $input1 -2 $input2 -U $input3 -S $output """
+	exec """ \$(echo $QCBIN/bowtie2) -p \$(echo $BOWTIE2_PROCS) --end-to-end -I \$(echo $MIN_INSERT_SIZE) -X \$(echo $MAX_INSERT_SIZE) -x \$(echo $BOWTIE2_INDEX_PATH) -1 $input1 -2 $input2 -U $input3 -S $output """
 }
 
 bam = {
