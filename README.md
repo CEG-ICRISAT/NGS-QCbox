@@ -94,11 +94,29 @@ Quick mode run generates a folder by name [sample]_QC_quick and complete mode ge
 2. QC_final_[quick|complete].txt summarizes the above information for all the samples. It contains in addition to  the  reads generated and retained after quality trimming, pecentage of alignment, genome coverage at 1X to 15X and mean read depth observed from alignment.
 
 ## DOCKER image
-A docker based image containing NGS-QCBox  and Raspberry is provided for convenience to users. This image can be pulled from orangekatta/ngsqcbox:v0.2
+A docker based image containing NGS-QCBox and Raspberry is provided for convenience to users. This image can be pulled from dadu/ngsqcbox:v0.2.1 or dadu:ngsqcbox_win:v0.2. Installation and usage of docker image could be found on the docker manual page (For Linux - https://docs.docker.com/linux/step_one/ , For windows- https://docs.docker.com/windows/step_one/). The docker image works well with the linux operating systems. 
+
+Note for Windows user:
+1. The user must run the docker image as Administrator.
+2. The user must create a copy of the input fastq/fastq.gz files before the QC run as the original files are renamed for the execution of the pipeline and restored back once the QC finishes.
+3. The user must grant permission of read and write to folder used for QC.
+4. The user must not halt the pipeline midway during the QC run as the original fastq/fastq.gz files.
+
+The usage of the docker image is as follows:
 ```
-docker pull orangekatta/ngsqcbox:v0.2
+docker pull dadu/ngsqcbox:v0.2.1 (for Linux versions)
+docker run -it dadu/ngsqcbox:v0.2.1
+
+docker pull dadu/ngsqcbox_win:v0.2 (for Windows)
+docker run -it dadu/ngsqcbox_win:v0.2 
+
+NGS-QCbox could be located in the /data directory
+Follow the steps in the given order:
+cd /data/NGS-QCbox/
+source sourceme.ngsqcbox
 ```
-and find the latest  NGS-QCBox and Raspberry on  /data partition in the docker image
+
+and find the latest  NGS-QCBox and Raspberry on /data partition in the docker image
 For more information on using docker images please refer to www.docker.com documentation. 
 
 ## DISCLAIMER
@@ -107,5 +125,3 @@ For more information on using docker images please refer to www.docker.com docum
 ## LICENSE
 GPL v3
 A copy of GPLv3 is included in the package
-
-
