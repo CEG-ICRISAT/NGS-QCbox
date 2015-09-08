@@ -97,9 +97,13 @@ Quick mode run generates a folder by name [sample]_QC_quick and complete mode ge
 A docker based image containing NGS-QCBox and Raspberry is provided for convenience to users. This image can be pulled from dadu/ngsqcbox:v0.2.1 or dadu:ngsqcbox_win:v0.2. Installation and usage of docker image could be found on the docker manual page (For Linux - https://docs.docker.com/linux/step_one/ , For windows- https://docs.docker.com/windows/step_one/). The docker image works well with the linux operating systems. 
 
 Note for Windows user:
+
 1. The user must run the docker image as Administrator.
+
 2. The user must create a copy of the input fastq/fastq.gz files before the QC run as the original files are renamed for the execution of the pipeline and restored back once the QC finishes.
+
 3. The user must grant permission of read and write to folder used for QC.
+
 4. The user must not halt the pipeline midway during the QC run as the original fastq/fastq.gz files.
 
 The usage of the docker image is as follows:
