@@ -27,9 +27,9 @@ if __name__ =='__main__':
      
     if choice == 1:
         phred_quality = raw_input('Enter minimum quality score cut-off: [20] ') or '20'
-        os.environ['QUALITY'] = os.path.abspath(phred_quality)
+        os.environ['QUALITY'] = phred_quality
         min_read_length = raw_input('Enter minimum read length post trimming: [50]') or '50'
-        os.environ['MIN_READ_LENGTH'] = os.path.abspath(min_read_length)
+        os.environ['MIN_READ_LENGTH'] = min_read_length
         if os.environ['QUALITY']  and  os.environ['MIN_READ_LENGTH']:
             prog = 'batchqc_quick.sh'
         else:
